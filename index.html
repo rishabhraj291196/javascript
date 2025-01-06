@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+    <div class="grid" id="cards">
+
+      </div>
+      
+      <label class="day-night">
+        <input type="checkbox" checked />
+        <div></div>
+      </label>
+      
+      <script>
+        // Dark & Light toggle
+
+            document.querySelector(".day-night input").addEventListener("change", () => {
+            document.querySelector("body").classList.add("toggle");
+            setTimeout(() => {
+                document.querySelector("body").classList.toggle("light");
+
+                setTimeout(
+                () => document.querySelector("body").classList.remove("toggle"),
+                10
+                );
+            }, 5);
+            });
+
+
+        const data = [
+            {
+                label: 'Convert Array to Object',
+                desc: '',
+                link: '/basics/arrayToObject.html'
+            }
+        ];
+        let html = '';
+        data.forEach((item) => {
+            html += `<div class="card" onclick="goto('${item.link}')">
+          
+          <h4>${item.label}</h4>
+          <p>
+            ${item.desc}
+          </p>
+          <div class="shine"></div>
+          <div class="background">
+            <div class="tiles">
+              <div class="tile tile-1"></div>
+              <div class="tile tile-2"></div>
+              <div class="tile tile-3"></div>
+              <div class="tile tile-4"></div>
+      
+              <div class="tile tile-5"></div>
+              <div class="tile tile-6"></div>
+              <div class="tile tile-7"></div>
+              <div class="tile tile-8"></div>
+      
+              <div class="tile tile-9"></div>
+              <div class="tile tile-10"></div>
+            </div>
+      
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+          </div>
+        </div>`;
+        })
+        document.getElementById('cards').innerHTML = html;
+        function goto(link){
+            window.location.href = window.location.origin + link;
+        }
+      </script>
+</body>
+</html>
