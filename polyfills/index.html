@@ -32,9 +32,23 @@ console.log(modified2);
     </code></pre>
     <script src="../highlight/highlight.min.js"></script>
     <script>
-        const arr = ['a','b','c'];
-        const output  = arr.reduce((ac,it) => ({...ac,[it]: it}),{});
-        console.log(output)
+       //normal way
+const arr = [1,2,3,4];
+const modified = arr.filter((val) => val > 2);
+console.log(modified);
+//output : [3,4]
+
+//polyfills filter
+Array.prototype.myFilter = function(cb){
+	const temp = [];
+	for(let i = 0; i < this.length; i++){
+		if(cb(this[i],i,this)) temp.push(this[i])
+	}
+	return temp;
+}
+
+const modified2 = arr.myFilter((val) => val > 2);
+console.log(modified2);
     </script>
     <script>
         // Initialize Highlight.js
