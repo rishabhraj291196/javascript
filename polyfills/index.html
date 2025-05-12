@@ -30,26 +30,29 @@ const modified2 = arr.myFilter((val) => val > 2);
 console.log(modified2);
 //output : [3,4]
     </code></pre>
-    <script src="../highlight/highlight.min.js"></script>
-    <script>
-       //normal way
+
+    <h2>Map polyfills</h2>
+    <pre><code class="language-javascript">
+//normal way
 const arr = [1,2,3,4];
-const modified = arr.filter((val) => val > 2);
+const modified = arr.map((val) => val * 2);
 console.log(modified);
-//output : [3,4]
+//output : [2,4,6,8]
 
 //polyfills filter
-Array.prototype.myFilter = function(cb){
+Array.prototype.myMap = function(cb){
 	const temp = [];
 	for(let i = 0; i < this.length; i++){
-		if(cb(this[i],i,this)) temp.push(this[i])
+		temp.push(this[i] * 2)
 	}
 	return temp;
 }
 
-const modified2 = arr.myFilter((val) => val > 2);
+const modified2 = arr.myMap((val) => val * 2);
 console.log(modified2);
-    </script>
+//output : [2,4,6,8]
+    </code></pre>
+    <script src="../highlight/highlight.min.js"></script>
     <script>
         // Initialize Highlight.js
         hljs.highlightAll();
