@@ -9,10 +9,10 @@
 
 .sidebar{
     width: 150px;
-    height: 100%;
+    height: 100vh;
     overflow-y: scroll;
 }
 .wrapper{
-    width: calc(155px - 100%);
+    width: calc(100% - 155px);
     height: 100%;
 }
