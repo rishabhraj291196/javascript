@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="../highlight/styles/atom-one-dark.min.css">
 </head>
 <body>
-    <center><h1>Polyfills</h1></center>
-    <hr>
-    <h2>Filter polyfills</h2>
+    
+    <main class="container">
+        <div class="header">
+            <center><h1>Polyfills</h1></center>
+            <hr>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>Filter</li>
+                <li>Map</li>
+            </ul>
+        </div>
+        <div class="wrapper">
+            <h2>Filter polyfills</h2>
     <pre><code class="language-javascript">
 //normal way
 const arr = [1,2,3,4];
@@ -33,25 +44,29 @@ console.log(modified2);
 
     <h2>Map polyfills</h2>
     <pre><code class="language-javascript">
-//normal way
-const arr = [1,2,3,4];
-const modified = arr.map((val) => val * 2);
-console.log(modified);
-//output : [2,4,6,8]
+        //normal way
+        const arr = [1,2,3,4];
+        const modified = arr.map((val) => val * 2);
+        console.log(modified);
+        //output : [2,4,6,8]
 
-//polyfills filter
-Array.prototype.myMap = function(cb){
-	const temp = [];
-	for(let i = 0; i < this.length; i++){
-		temp.push(this[i] * 2)
-	}
-	return temp;
-}
+        //polyfills filter
+        Array.prototype.myMap = function(cb){
+            const temp = [];
+            for(let i = 0; i < this.length; i++){
+                temp.push(this[i] * 2)
+            }
+            return temp;
+        }
 
-const modified2 = arr.myMap((val) => val * 2);
-console.log(modified2);
-//output : [2,4,6,8]
-    </code></pre>
+        const modified2 = arr.myMap((val) => val * 2);
+        console.log(modified2);
+        //output : [2,4,6,8]
+            </code></pre>
+        </div><!--end of wrapper class-->
+    </main>
+    
+    
     <script src="../highlight/highlight.min.js"></script>
     <script>
         // Initialize Highlight.js
