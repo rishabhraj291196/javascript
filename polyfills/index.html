@@ -9,10 +9,9 @@
 <body>
     <center><h1>Polyfills</h1></center>
     <hr>
-    <br/>
     <h2>Convert Array to object</h2>
     <pre><code class="language-javascript">
-       //normal way
+//normal way
 const arr = [1,2,3,4];
 const modified = arr.filter((val) => val > 2);
 console.log(modified);
@@ -29,6 +28,7 @@ Array.prototype.myFilter = function(cb){
 
 const modified2 = arr.myFilter((val) => val > 2);
 console.log(modified2);
+//output : [3,4]
     </code></pre>
     <script src="../highlight/highlight.min.js"></script>
     <script>
