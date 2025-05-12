@@ -1,3 +1,6 @@
+body{
+    background-color: #f0f1fa;
+}
 .container{
     height: 100%;
     width: 100%;
@@ -10,9 +13,17 @@
 .sidebar{
     width: 150px;
     height: 100vh;
-    overflow-y: scroll;
+    background-color: #fff;
+    border-radius: 6px
 }
 .wrapper{
-    width: calc(100% - 155px);
+    width: calc(100% - 165px);
     height: 100%;
+    margin-left: 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 8px
+}
+.wrapper .headerName{
+    border-bottom: 1px solid #7c7878ad
 }
